@@ -1,0 +1,69 @@
+#include <err.h>
+#include <fcntl.h>
+#include <stdlib.h>
+#include <unistd.h>
+
+
+
+int main (int argc, char* argv[])
+{
+	
+if (argc != 2) {
+		
+errx(1, "Wrong number of arguments");
+	}
+
+	
+
+
+int bytes[255];
+	
+
+for (int i = 0; i < 256; i++)
+	{
+		
+bytes[i] = 0;
+	}
+
+	
+int fd;
+	
+
+fd = open(argv[1], O_RDONLY);
+	
+if (fd == -1) {
+		
+err(1, "%s", argv[1]);
+	}
+
+	
+
+char buffer[4096];
+	
+ssize_t read_size;
+
+	
+while ((read_size = read(fd, &buffer, sizeof(buffer))) > 0) {
+		
+for (int i = 0; i < read_size; i++)
+		{
+			
+
+int j = buffer[i];
+			bytes[j]++;
+		}
+
+	}
+
+	close(fd);
+
+	
+
+for (int i = 0; i < 256; i++)
+	{
+		printf("%c occurs %d times\n", i, bytes[i]);
+	}
+
+	exit(0);
+}
+
