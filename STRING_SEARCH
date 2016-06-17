@@ -1,0 +1,7 @@
+echo "ENTER a string --->"
+read STR
+for each 
+ do
+        echo $each
+	grep -c $STR $each
+ done

@@ -1,0 +1,6 @@
+a=`who |wc -l`
+b=`who | grep $1 |wc -l`
+c=`who | grep $2 |wc -l`
+d=`expr $b + $c`
+e=`expr $a - $d`
+echo "Broyiat na terminalite e: $e"

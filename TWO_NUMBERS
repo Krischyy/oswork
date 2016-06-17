@@ -1,0 +1,6 @@
+read n1 
+read n2
+a=`expr $n1 + $n2`
+echo "Sumata im e: $a"
+b=`expr $n1 \* $n2`
+echo "Proizvedenieto im e: $b"

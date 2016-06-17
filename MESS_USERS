@@ -1,0 +1,9 @@
+echo ENTER THE MESSAGE
+read MESSAGE
+for each
+do
+	if who | grep $each > /dev/null
+	then
+	    echo $MESSAGE | write $each
+	fi
+done

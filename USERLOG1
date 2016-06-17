@@ -1,0 +1,10 @@
+while true
+do
+  if who | grep $1 > /dev/null
+  then 
+      echo $1 works
+      break
+  else 
+      sleep 5
+  fi
+done

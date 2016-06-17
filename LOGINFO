@@ -1,0 +1,4 @@
+echo -e "The current date and time :  \c"
+date
+echo -e "Number of users logged --> \c"
+who | wc -l

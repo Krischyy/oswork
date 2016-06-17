@@ -1,0 +1,4 @@
+read key
+write $key << !
+Hello
+!
